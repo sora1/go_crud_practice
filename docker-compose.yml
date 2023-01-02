@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db-go-database-sql:
+    image: mysql:5.7
+    container_name: db-go-database-sql
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: test_password
